@@ -1,0 +1,110 @@
+
+.contact__wrap{
+    text-align: center;
+    transform: translateY(10%);
+}
+
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto; 
+}
+.contact__form input{
+    height: 40px;
+    border: 2px solid black;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    transition: .2s;
+}
+.contact__form input:hover:not(.image-upload){
+    border: 2px solid #ff8080;
+}
+
+.contact__form input::placeholder{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.contact__form textarea{
+    height: 150px;
+    border: 2px solid black;
+    resize: none;
+    padding-left: 5px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+input::-webkit-file-upload-button {
+  height: 40px;
+  border: 2px solid black;
+  padding-left: 5px;
+  margin-bottom: 10px;
+  transition: .2s;
+  padding: 10px 20px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+  transition: 100ms ease-out;
+  cursor: pointer;
+}
+
+input::-webkit-file-upload-button:hover {
+  background-color: rgb(187, 186, 186);
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0,0,0,0.14), 0px 1px 14px 0px rgba(0,0,0,0.12)
+}
+
+.contact__form textarea::placeholder{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.contact__form textarea:hover{
+      border: 2px solid #ff8080;
+}
+.contact__form input[type="submit"]{
+    height: 40px;
+    font-size: 14px;
+    color: #fff;
+    background: black;
+    text-transform: uppercase;
+    width: 50%;
+    transition: .2s;
+}
+.contact__form input[type="submit"]:hover{
+    font-size: 16px;
+    border: 0;
+}
+*:focus{
+  outline: #ff8080 auto 1px;
+}
+
+body{
+  background-color: #f7f5ff;
+  background-position: 10vw 35vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.fa-instagram{
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  font-size: 38px;
+}
+
+.fa-instagram:hover{
+  font-size: 42px;
+  color: #ff8080;
+  transition: all .1s linear;
+  cursor: pointer;
+}
+.title{
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: white;
+}

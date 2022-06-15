@@ -1,0 +1,33 @@
+.dashboard{
+    height: 100vh;
+    width: 100vw;
+    /* overflow: scroll; */
+    /* scrollbar-gutter: auto; */
+}
+
+.dashboard-division{
+    display:flex; flex-direction:row;
+}
+
+.left-dashboard{
+    width : 60vw;
+}
+
+.right-dashboard{
+    width : 40vw;
+    margin-left: -2vw;
+}
+
+.heading{
+    margin: 30px;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    color: white;
+}
+
+.image2{
+    max-height: 60vh;
+    object-fit: contain;
+    /* min-width: 40vh;
+    max-width : 80vh; */
+}

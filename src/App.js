@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import LogIn from './components/login.js'
+import SignUp from "./components/signup.js"
+import SubmittedArticles from './components/submittedArticles.js';
+import Dashboard from "./components/dashboard.js"
+import CreateArticle from './components/create.js';
+import UpdateArticle from './components/update.js';
+import BlogPost from './components/blogpost.js';
+import { Route, Routes, BrowserRouter } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<LogIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/blogpost/:slug" element={<BlogPost />} />
+            <Route path="/create" element={<CreateArticle />} />
+            <Route path="/update" element={<UpdateArticle />} />
+            {/* <Route path="/navbar" element={<NavBar />} />  */}
+            <Route path="/submittedArticles" element={<SubmittedArticles />} /> 
+        </Routes>
+   </BrowserRouter>
   );
 }
 

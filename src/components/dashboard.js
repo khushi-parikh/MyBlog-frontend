@@ -43,7 +43,8 @@ function Dashboard(){
                         <EachCard title={blogPost.title}
                             imagesrc={blogPost.image} 
                             excerpt={blogPost.excerpt}
-                            slug={blogPost.slug}/>
+                            slug={blogPost.slug}
+                            username={blogPost.user_name} />
                     ))}
                     <SweetPagination
                         currentPageData={setCurrentPageData}
@@ -64,7 +65,8 @@ function Dashboard(){
                         <EachCard title={blogPost.title}
                             imagesrc={blogPost.image} 
                             excerpt={''}
-                            slug={blogPost.slug}/>
+                            slug={blogPost.slug}
+                            username={blogPost.user_name} />
                     ))}
                 </div>
             </div>
@@ -78,6 +80,7 @@ const EachCard = (props) =>{
             <Card>
             {/* <Card.Header>Featured</Card.Header> */}
             <Card.Body>
+            <Card.Subtitle className="mb-2 text-muted">@{props.username}</Card.Subtitle>
             <Card.Title><u>{props.title}</u></Card.Title>
             <Card.Text>
             {props.excerpt}
@@ -90,7 +93,7 @@ const EachCard = (props) =>{
             
             </Card>
         </div>
-    )
+    ) 
 }
 
 export default Dashboard;

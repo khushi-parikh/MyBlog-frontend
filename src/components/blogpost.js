@@ -14,14 +14,13 @@ const BlogPost = (props) => {
             try{
                 const resp = await axios.get(`${process.env.REACT_APP_API_URL}/api/MyBlogApp/${slug}`);
                 setBlogsPost(resp.data);
-                console.log(resp.data.description);
             }
             catch(err){
                 console.log(slug)
             }
         };
         fetchData();
-    },[])
+    },[slug])
 
     // const Title = () => (
     //     <h1 className="title">{blogsPost.title}</h1>
@@ -32,7 +31,9 @@ const BlogPost = (props) => {
         <div className="blogpost">
             <NavBar />
             <div className="box">
-                {blogsPost.image && <img src={blogsPost.image}></img>}
+                @{blogsPost.user_name}
+                {blogsPost.image && <img src={blogsPost.image} alt="Oops"></img>}
+                <hr></hr>
                 <h1 className="title1">{blogsPost.title}</h1>
                 <p>{blogsPost.description}</p>;
             </div>

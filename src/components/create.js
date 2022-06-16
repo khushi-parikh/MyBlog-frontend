@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom"
 
 function CreateArticle(){
     const navigate = useNavigate();
-    const [inputs, setInputs] = React.useState({title: '', excerpt: '', description: '', image: null});
+    let username = localStorage.getItem("username");
+    const [inputs, setInputs] = React.useState({title: '', excerpt: '', description: '', image: null, username: ''});
 
     const handleInputChange = (e) => {
         setInputs(inputs => ({...inputs, [e.target.name]: e.target.value}));
@@ -28,6 +29,7 @@ function CreateArticle(){
         form_data.append('title', inputs.title);
         form_data.append('excerpt', inputs.excerpt);
         form_data.append('description', inputs.description);
+        form_data.append('user_name', username);
         let url = `${process.env.REACT_APP_API_URL}/api/MyBlogApp/`;
         console.log("formdata",form_data)
         axios.post(url, form_data, {

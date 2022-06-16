@@ -9,19 +9,21 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function SubmittedArticles(){
     const [blogsPost, setBlogsPost] = useState([]);
+    let user = localStorage.getItem("username")
 
     const fetchData = async () => {
         try{
-            const resp = await axios.get(`${process.env.REACT_APP_API_URL}/api/MyBlogApp/`);
+            const resp = await axios.get(`${process.env.REACT_APP_API_URL}/api/MyBlogApp/user/${user}`);
             setBlogsPost(resp.data);
+            console.log(resp.data)
         }
         catch(err){
         }
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchData();
-    },[])
+      }, [])
 
     return(
         <div className='submittedArticles'>
@@ -33,7 +35,8 @@ function SubmittedArticles(){
                     slug ={blogPost.slug}
                     description = {blogPost.description}
                     id = {blogPost.id} 
-                    fetchData={fetchData} />
+                    user={user}
+                    fetchData={()=>fetchData} />
             ))}
         </div>
     )
@@ -45,7 +48,7 @@ const EachCard = (props) =>{
     const postDelete = async () => {
         try{
             axios.delete(`${process.env.REACT_APP_API_URL}/api/MyBlogApp/${props.slug}`)
-                .then(()=>props.fetchData());
+            setTimeout(props.fetchData(),500);
             console.log('deleted')
         }
         catch(err){
@@ -68,7 +71,7 @@ const EachCard = (props) =>{
             
             <Card.Body>
                 <div className='image-outside'>
-                    { props.image && <img className="image-sa" src={props.image} /> }
+                    { props.image && <img className="image-sa" src={props.image} alt="Oops" /> }
                 </div>
                 <Card.Title >{props.title}</Card.Title>
                 <Card.Text>

@@ -39,7 +39,7 @@ function CreateArticle(){
               console.log(res.data);
             })
             .then(()=>setTimeout(navigate('/submittedArticles',{ replace: true }),500))
-            .catch(err => console.log(err))
+            .catch(err => console.log(err, url))
     }
 
     return (  

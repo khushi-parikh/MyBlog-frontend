@@ -28,7 +28,7 @@ function CreateArticle(){
         form_data.append('title', inputs.title);
         form_data.append('excerpt', inputs.excerpt);
         form_data.append('description', inputs.description);
-        let url = 'http://localhost:8000/api/MyBlogApp/';
+        let url = `${process.env.REACT_APP_API_URL}/api/MyBlogApp/`;
         console.log("formdata",form_data)
         axios.post(url, form_data, {
           headers: {
